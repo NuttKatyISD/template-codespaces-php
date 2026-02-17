@@ -28,15 +28,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: Install build tools
-        run: sudo apt-get update && sudo apt-get install -y g++
       - name: Test 1
         id: test-1
         uses: compscirocks/autograding-io-grader@main
         with:
           test-name: Test 1
-          setup-command: g++ ${{ env.RUN_FILE}}.cpp -o ${{ env.RUN_FILE }}
-          command: ./${{ env.RUN_FILE }}
+          command: php ./${{ env.RUN_FILE }}.php
           filename: ${{ env.DATA_FILE }}
           input: |-
             Some test input
@@ -54,8 +51,7 @@ jobs:
         uses: compscirocks/autograding-io-grader@main
         with:
           test-name: Test 2
-          setup-command: g++ ${{ env.RUN_FILE}}.cpp -o ${{ env.RUN_FILE}}
-          command: ./${{ env.RUN_FILE }}
+          command: php ./${{ env.RUN_FILE }}.php
           filename: ${{ env.DATA_FILE }}
           input: |-
             Some test input
