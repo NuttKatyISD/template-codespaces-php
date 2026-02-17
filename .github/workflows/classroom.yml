@@ -33,7 +33,7 @@ jobs:
         uses: compscirocks/autograding-io-grader@main
         with:
           test-name: Test 1
-          command: php ./${{ env.RUN_FILE }}.php
+          command: php ${{ env.RUN_FILE }}.php
           filename: ${{ env.DATA_FILE }}
           input: |-
             Some test input
@@ -51,7 +51,7 @@ jobs:
         uses: compscirocks/autograding-io-grader@main
         with:
           test-name: Test 2
-          command: php ./${{ env.RUN_FILE }}.php
+          command: php ${{ env.RUN_FILE }}.php
           filename: ${{ env.DATA_FILE }}
           input: |-
             Some test input
